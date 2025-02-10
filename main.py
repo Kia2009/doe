@@ -64,7 +64,7 @@ def send_welcome(message):
 
 @bot.message_handler(func=lambda message: message.text == "شاخص")
 def handle_index_query(message):
-    result = get_doe_details()
+    result = get_doe_details('https://www.accuweather.com/fa/ir/ahvaz/210047/air-quality-index/210047')
     if result['status'] == 'success':
         bot.reply_to(message, f"شاخص کیفیت هوای اهواز: {result['air_quality_index']}")
     else:

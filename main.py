@@ -2,13 +2,9 @@ import requests
 from bs4 import BeautifulSoup
 import telebot
 import os
-from dotenv import load_dotenv
 
 
-load_dotenv()
-
-
-bot = telebot.TeleBot(os.getenv("BOT_TOKEN"))
+bot = telebot.TeleBot(os.environ.get("BOT_TOKEN"))
 
 def get_doe_details(url: str):
 
